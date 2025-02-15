@@ -1,0 +1,114 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.center-title {
+    text-align: center;
+    color: #bb86fc;
+    margin-bottom: 20px;
+}
+
+.certificate {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ffffff;
+}
+
+.certificate::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff);
+    background-size: 200% 200%;
+    animation: neonBorder 4s linear infinite;
+    z-index: 1;
+}
+
+.certificate::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #1e1e1e;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.certificate h2 {
+    margin-top: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.certificate p, .certificate a {
+    position: relative;
+    z-index: 3;
+}
+
+a {
+    color: #03dac6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@keyframes neonBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 15% auto;
+    padding: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
